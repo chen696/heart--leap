@@ -188,7 +188,12 @@ void Error_Handler(void)
   /* User can add his own implementation to report the HAL error return state */
   __disable_irq();
   while (1)
-  {
+  {HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+      HAL_Delay(2000);
+      HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+      HAL_Delay(200);
+      HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+      HAL_Delay(500);
   }
   /* USER CODE END Error_Handler_Debug */
 }
